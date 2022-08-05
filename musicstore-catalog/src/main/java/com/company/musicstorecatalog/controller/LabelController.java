@@ -34,7 +34,7 @@ public class LabelController {
     public Label createLabel(@RequestBody @Valid Label label) {
         if (label.getName() == null) throw new RuntimeException("Label must have a name");
         if (label.getWebsite() == null) throw new RuntimeException("Label must have a Website");
-        return label;
+        return labelService.createLabel(label);
     }
 
     @PutMapping(value = "/{id}")
@@ -42,9 +42,7 @@ public class LabelController {
 //    public Label updateLabel(@RequestBody Label label, @PathVariable long id) {
     public Label updateLabel(@RequestBody Label label) {
         if (label.getName() == null) throw new RuntimeException("Label must have a name");
-
         if (label.getWebsite() == null) throw new IllegalArgumentException("Label must have a Website");
-
         return labelService.updateLabel(label);
     }
 

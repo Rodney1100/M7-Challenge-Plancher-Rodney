@@ -29,14 +29,14 @@ public class Track {
 
     public Track(Long id, String albumId, String title, String runTime) {
         this.id = id;
-        this.albumId = albumId;
         this.title = title;
+        this.albumId = albumId;
         this.runTime = runTime;
     }
 
     public Track(String albumId, String title, String runTime) {
-        this.albumId = albumId;
         this.title = title;
+        this.albumId = albumId;
         this.runTime = runTime;
     }
 

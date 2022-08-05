@@ -4,6 +4,8 @@ import com.company.musicstorecatalog.model.Label;
 import com.company.musicstorecatalog.repository.LabelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.DeleteMapping;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -14,13 +16,12 @@ public class LabelService {
 
     @Autowired
     public LabelService(LabelRepository labelRepository) {
-//        this.labelRepository = labelRepository;
+        this.labelRepository = labelRepository;
     }
 
     public List<Label> findAllLabel() {
-
-        return labelRepository.findAll();
-
+        List<Label> labelList = labelRepository.findAll();
+        return labelList;
     }
 
     public Label findById(long id) {
@@ -41,9 +42,9 @@ public class LabelService {
         if (oldLabel.isPresent()) {
             label.setId(oldLabel.get().getId());
             return labelRepository.save(label);
-        }
-        else throw new RuntimeException("Console with that ID does not exist");
+        } else throw new RuntimeException("Console with that ID does not exist");
     }
-
-    public void deleteLabelById(long id) { labelRepository.deleteById(id); }
+    public void deleteLabelById(long id) {
+        labelRepository.deleteById((long)id);
+    }
 }
