@@ -1,2 +1,4 @@
-package com.company.musicstorecatalog.controller;public class AlbumController {
+package com.company.musicstorecatalog.controller;
+
+public class AlbumController {
 }

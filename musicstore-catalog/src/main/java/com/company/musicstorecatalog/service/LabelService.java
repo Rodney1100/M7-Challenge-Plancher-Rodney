@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service
 public class LabelService {
 
-    private LabelRepository labelRepository;
+    private final LabelRepository labelRepository;
 
     @Autowired
     public LabelService(LabelRepository labelRepository) {
@@ -20,8 +20,7 @@ public class LabelService {
     }
 
     public List<Label> findAllLabel() {
-        List<Label> labelList = labelRepository.findAll();
-        return labelList;
+        return labelRepository.findAll();
     }
 
     public Label findById(long id) {
@@ -42,7 +41,7 @@ public class LabelService {
         if (oldLabel.isPresent()) {
             label.setId(oldLabel.get().getId());
             return labelRepository.save(label);
-        } else throw new RuntimeException("Console with that ID does not exist");
+        } else throw new RuntimeException("Label with that ID does not exist");
     }
     public void deleteLabelById(long id) {
         labelRepository.deleteById((long)id);
