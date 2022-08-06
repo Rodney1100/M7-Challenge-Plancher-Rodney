@@ -21,6 +21,7 @@ public class LabelRepositoryTest {
 
     @Before
     public void setUp() throws Exception {
+        repo.deleteAll();
     }
 
     @Test
