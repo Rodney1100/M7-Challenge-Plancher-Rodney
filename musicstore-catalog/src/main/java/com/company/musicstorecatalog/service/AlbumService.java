@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Service
 public class AlbumService {
-    private AlbumRepository albumRepository;
+    private final AlbumRepository albumRepository;
 
     @Autowired
     public AlbumService(AlbumRepository albumRepository) {
