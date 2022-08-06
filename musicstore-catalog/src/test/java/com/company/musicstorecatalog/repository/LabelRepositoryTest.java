@@ -1,5 +1,6 @@
 package com.company.musicstorecatalog.repository;
 
+import com.company.musicstorecatalog.model.Album;
 import com.company.musicstorecatalog.model.Label;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,10 +34,11 @@ public class LabelRepositoryTest {
 
 //        Act
         repo.save(label);
-        expectedLabel.setId((long) label.getId());
+        expectedLabel.setId(label.getId());
+
 
 //        Assert
-        assertEquals(expectedLabel, label);
+        assertEquals(expectedLabel.toString(), label.toString());
 
 //        Act
         List<Label> allTheLabel = repo.findAll();
