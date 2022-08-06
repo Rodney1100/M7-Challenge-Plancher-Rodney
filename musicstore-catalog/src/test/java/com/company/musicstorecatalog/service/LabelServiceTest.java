@@ -22,36 +22,37 @@ public class LabelServiceTest {
 
     @Before
     public void setUp() throws Exception {
-        setUpLabelRepositoryMock();
+//        setUpLabelRepositoryMock();
         this.service = new LabelService(repo);
     }
 
-    private void setUpLabelRepositoryMock() {
-        this.repo = mock(LabelRepository.class);
-
-        Label label = new Label("Murda Ink", "www.MurdaInk.com");
-        Label expectedLabel = new Label(1L, "Murda Ink", "www.MurdaInk.com");
-
-        List<Label> labelList = Arrays.asList(expectedLabel);
-
-        Optional<Label> findByIdResult = Optional.of(expectedLabel);
-
-        doReturn(expectedLabel).when(repo).save(label);
-        doReturn(labelList).when(repo).findAll();
-        doReturn(findByIdResult).when(repo).save(label);
-
-    }
+//    private void setUpLabelRepositoryMock() {
+//        this.repo = mock(LabelRepository.class);
+//
+//        Label label = new Label("Murda Ink", "www.MurdaInk.com");
+//        Label expectedLabel = new Label(1L, "Murda Ink", "www.MurdaInk.com");
+//
+//        List<Label> labelList = Arrays.asList(expectedLabel);
+//
+//        Optional<Label> findByIdResult = Optional.of(expectedLabel);
+//
+//        doReturn(expectedLabel).when(repo).save(label);
+//        doReturn(labelList).when(repo).findAll();
+//        doReturn(findByIdResult).when(repo).save(label);
+//
+//    }
 
     @Test
     public void shouldReturnLabelWithIdWhenSaving() {
 //        Arrange
 //        Make a new label
         Label labelToSave = new Label("Murder Ink", "www.MurderInk.com");
-        Label expectedLabel = new Label(1L,"Murder Ink", "www.MurderInk.com");
+        Label expectedLabel = new Label("Murder Ink", "www.MurderInk.com");
 //        Act
-        Label actualResult = service.addLabel(labelToSave);
+        repo.save(labelToSave);
+        expectedLabel.setId(labelToSave.getId());
 //        Assert
-        assertEquals(expectedLabel, actualResult);
+        assertEquals(expectedLabel, labelToSave);
     }
 
 }
