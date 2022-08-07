@@ -69,19 +69,5 @@ public class AlbumControllerTest {
                 .andExpect((ResultMatcher) content().json(mapper.writeValueAsString(expectedJsonValue)));
     }
 
-//    @Test
-//    public void getAlbumById() {
-//    }
-//
-//    @Test
-//    public void createAlbum() {
-//    }
-//
-//    @Test
-//    public void updateAlbum() {
-//    }
-//
-//    @Test
-//    public void deleteAlbum() {
-//    }
+
 }
