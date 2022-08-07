@@ -33,7 +33,7 @@ public class TrackController {
     @ResponseStatus(HttpStatus.CREATED)
     public Track createTrack(@RequestBody @Valid Track track) {
         if (track.getTitle() == null) throw new RuntimeException("Track must have a Title");
-        if (track.getAlbumId() == null) throw new RuntimeException("Track must have a Album ID");
+        if (track.getAlbumId() == 0) throw new RuntimeException("Track must have a Album ID");
         if (track.getRunTime() == null) throw new RuntimeException("Track must have a Run time");
         return trackService.createTrack(track);
     }
@@ -44,7 +44,7 @@ public class TrackController {
 //    public Track updateTrack(@RequestBody Track track) {
         if (track.getTitle() == null) throw new RuntimeException("Track must have a title");
 
-        if (track.getAlbumId() == null) throw new IllegalArgumentException("Track must have a album ID");
+        if (track.getAlbumId() == 0) throw new IllegalArgumentException("Track must have a album ID");
         if (track.getRunTime() == null) throw new IllegalArgumentException("Track must have a Run time");
 
         return trackService.updateTrack(track);

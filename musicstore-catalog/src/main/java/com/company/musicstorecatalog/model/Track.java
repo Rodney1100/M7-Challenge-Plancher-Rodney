@@ -17,7 +17,7 @@ public class Track {
 
     @NotNull
     @Column(name = "album_id")
-    private String albumId;
+    private int albumId;
 
     @NotNull
     @Length(max = 255)
@@ -27,14 +27,14 @@ public class Track {
     @Column(name = "run_time")
     private String runTime;
 
-    public Track(Long id, String albumId, String title, String runTime) {
+    public Track(Long id, int albumId, String title, String runTime) {
         this.id = id;
         this.title = title;
         this.albumId = albumId;
         this.runTime = runTime;
     }
 
-    public Track(String albumId, String title, String runTime) {
+    public Track(int albumId, String title, String runTime) {
         this.title = title;
         this.albumId = albumId;
         this.runTime = runTime;
@@ -51,11 +51,11 @@ public class Track {
         this.id = id;
     }
 
-    public String getAlbumId() {
+    public int getAlbumId() {
         return albumId;
     }
 
-    public void setAlbumId(String albumId) {
+    public void setAlbumId(int albumId) {
         this.albumId = albumId;
     }
 
