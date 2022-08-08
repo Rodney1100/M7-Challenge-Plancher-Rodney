@@ -12,27 +12,27 @@ public class TrackRecommendation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "track_recommendation_id")
-    private Integer id;
+    private Long id;
 
     @NotNull(message = "Track id may not be null")
     @Column(name = "track_id")
-    private Integer trackId;
+    private Long trackId;
 
     @NotNull(message = "User id must not be null")
     @Column(name = "user_id")
-    private Integer userId;
+    private Long userId;
 
     @NotNull(message = "Liked may not be null")
     private Boolean liked;
 
-    public TrackRecommendation(Integer id, Integer trackId, Integer userId, Boolean liked) {
+    public TrackRecommendation(Long id, Long trackId, Long userId, Boolean liked) {
         this.id = id;
         this.trackId = trackId;
         this.userId = userId;
         this.liked = liked;
     }
 
-    public TrackRecommendation(Integer trackId, Integer userId, Boolean liked) {
+    public TrackRecommendation(Long trackId, Long userId, Boolean liked) {
         this.trackId = trackId;
         this.userId = userId;
         this.liked = liked;
@@ -41,27 +41,27 @@ public class TrackRecommendation {
     public TrackRecommendation() {
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Integer getTrackId() {
+    public Long getTrackId() {
         return trackId;
     }
 
-    public void setTrackId(Integer trackId) {
+    public void setTrackId(Long trackId) {
         this.trackId = trackId;
     }
 
-    public Integer getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 

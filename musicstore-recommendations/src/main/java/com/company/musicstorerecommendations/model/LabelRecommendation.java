@@ -12,27 +12,27 @@ public class LabelRecommendation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "label_recommendation_id")
-    private Integer id;
+    private Long id;
 
     @NotNull(message = "May not be null")
     @Column(name = "label_id")
-    private Integer labelId;
+    private Long labelId;
 
     @NotNull(message = "User id may not be null")
     @Column(name = "user_id")
-    private Integer userId;
+    private Long userId;
 
     @NotNull(message = "Liked must be true or false")
     private Boolean liked;
 
-    public LabelRecommendation(Integer id, Integer labelId, Integer userId, Boolean liked) {
+    public LabelRecommendation(Long id, Long labelId, Long userId, Boolean liked) {
         this.id = id;
         this.labelId = labelId;
         this.userId = userId;
         this.liked = liked;
     }
 
-    public LabelRecommendation(Integer labelId, Integer userId, Boolean liked) {
+    public LabelRecommendation(Long labelId, Long userId, Boolean liked) {
         this.labelId = labelId;
         this.userId = userId;
         this.liked = liked;
@@ -41,27 +41,27 @@ public class LabelRecommendation {
     public LabelRecommendation() {
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Integer getLabelId() {
+    public Long getLabelId() {
         return labelId;
     }
 
-    public void setLabelId(Integer labelId) {
+    public void setLabelId(Long labelId) {
         this.labelId = labelId;
     }
 
-    public Integer getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 

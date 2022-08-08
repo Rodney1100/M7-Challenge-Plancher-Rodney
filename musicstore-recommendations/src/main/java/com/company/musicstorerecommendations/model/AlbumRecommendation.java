@@ -12,27 +12,27 @@ public class AlbumRecommendation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "album_recommendation_id")
-    private Integer id;
+    private Long id;
 
     @NotNull(message = "Album id must not be null")
     @Column(name = "album_id")
-    private Integer albumId;
+    private Long albumId;
 
     @NotNull(message = "User must not be null")
     @Column(name = "user_id")
-    private Integer userId;
+    private Long userId;
 
     @NotNull(message = "Liked must be true or false")
     private Boolean liked;
 
-    public AlbumRecommendation(Integer id, Integer albumId, Integer userId, Boolean liked) {
+    public AlbumRecommendation(Long id, Long albumId, Long userId, Boolean liked) {
         this.id = id;
         this.albumId = albumId;
         this.userId = userId;
         this.liked = liked;
     }
 
-    public AlbumRecommendation(Integer albumId, Integer userId, Boolean liked) {
+    public AlbumRecommendation(Long albumId, Long userId, Boolean liked) {
         this.albumId = albumId;
         this.userId = userId;
         this.liked = liked;
@@ -41,27 +41,27 @@ public class AlbumRecommendation {
     public AlbumRecommendation() {
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Integer getAlbumId() {
+    public Long getAlbumId() {
         return albumId;
     }
 
-    public void setAlbumId(Integer albumId) {
+    public void setAlbumId(Long albumId) {
         this.albumId = albumId;
     }
 
-    public Integer getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
