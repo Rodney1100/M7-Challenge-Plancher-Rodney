@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/M7-Challenge-Plancher-Rodney.iml" filepath="$PROJECT_DIR$/.idea/M7-Challenge-Plancher-Rodney.iml" />
-      <module fileurl="file://$PROJECT_DIR$/musicstore-catalog/musicstore-catalog.iml" filepath="$PROJECT_DIR$/musicstore-catalog/musicstore-catalog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/musicstore-catalog.iml" filepath="$PROJECT_DIR$/app/musicstore-catalog.iml" />
       <module fileurl="file://$PROJECT_DIR$/musicstore-recommendations/musicstore-recommendations.iml" filepath="$PROJECT_DIR$/musicstore-recommendations/musicstore-recommendations.iml" />
     </modules>
   </component>
