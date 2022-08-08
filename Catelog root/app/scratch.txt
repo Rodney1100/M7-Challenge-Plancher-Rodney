@@ -1,0 +1,10 @@
+mysql://ihz0mvy5nj7s2vp0:s2wu7ahk6zpcw9bo@x71wqc4m22j8e3ql.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/na04okdpl5ttv75y
+
+SPRING_DATASOURCE_USERNAME ihz0mvy5nj7s2vp0
+SPRING_DATASOURCE_PASSWORD s2wu7ahk6zpcw9bo
+
+SPRING_DATASOURCE_URL jdbc:mysql://x71wqc4m22j8e3ql.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/c
+
+SPRING_DATASOURCE_URL
+SPRING_DATASOURCE_USERNAME
+SPRING_DATASOURCE_PASSWORD

@@ -11,15 +11,26 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.List;
 
 import static org.junit.Assert.*;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ArtistRepositoryTest {
 
     @Autowired
     private ArtistRepository repo;
+    @Autowired
+    private AlbumRepository albumRepository;
+
+    @Autowired
+    private LabelRepository labelRepository;
+    @Autowired
+    private TrackRepository trackRepository;
 
     @Before
     public void setUp() throws Exception {
+        trackRepository.deleteAll();
+        albumRepository.deleteAll();
+        labelRepository.deleteAll();
         repo.deleteAll();
     }
 
@@ -28,12 +39,11 @@ public class ArtistRepositoryTest {
 //        Arrange
 //        Make a new label
         Artist artist = new Artist("JZ", "@JZ", "@JayZ");
-        Artist expectedLabel = new Artist("JZ", "@JZ", "@JayZ");
+        repo.save(artist);
+        Artist expectedArtist = new Artist(artist.getId(), "JZ", "@JZ", "@JayZ");
 
 //        Act
-        repo.save(artist);
-        expectedLabel.setId(artist.getId());
-        assertEquals(expectedLabel.toString(), artist.toString());
+        assertEquals(expectedArtist.toString(), artist.toString());
 
         // Act
         List<Artist> allTheArtist = repo.findAll();

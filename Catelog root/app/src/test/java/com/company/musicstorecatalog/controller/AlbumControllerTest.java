@@ -102,10 +102,10 @@ public class AlbumControllerTest {
 
     @Test
     public void shouldUpdateById() throws Exception {
-        Album album = new Album(1L, "The Black Album", 10L, LocalDate.of(2003, 11, 14), 2L, new BigDecimal("19.99"));
+        Album album = new Album(5L, "The Black Album", 10L, LocalDate.of(2003, 11, 14), 2L, new BigDecimal("19.99"));
         String expectedJsonValue = mapper.writeValueAsString(album);
 
-        mockMvc.perform(put("/album/1")
+        mockMvc.perform(put("/album/5")
                 .content(expectedJsonValue)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNoContent());
