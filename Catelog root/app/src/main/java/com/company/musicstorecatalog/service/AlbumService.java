@@ -40,7 +40,7 @@ public class AlbumService {
         if (oldAlbum.isPresent()) {
             album.setId(oldAlbum.get().getId());
             return albumRepository.save(album);
-        } else throw new RuntimeException("Console with that ID does not exist");
+        } else throw new RuntimeException("Album with that ID does not exist");
     }
 
     public void deleteAlbumById(long id) {

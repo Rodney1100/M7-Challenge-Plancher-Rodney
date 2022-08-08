@@ -38,7 +38,7 @@ public class TrackService {
         if (oldTrack.isPresent()) {
             track.setId(oldTrack.get().getId());
             return trackRepository.save(track);
-        } else throw new RuntimeException("Console with that ID does not exist");
+        } else throw new RuntimeException("Track with that ID does not exist");
     }
 
     public void deleteTrackById(Long id) {
