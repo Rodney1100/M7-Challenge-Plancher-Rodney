@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Catelog root" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/musicstore-recommendations" vcs="Git" />
   </component>
 </project>

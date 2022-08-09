@@ -14,7 +14,9 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -47,31 +49,30 @@ public class LabelControllerTest {
         doReturn(label1).when(service).createLabel(label1);
     }
 
-//    @Test
-//    public void getAllLabel() throws Exception {
-//        Label label = new Label(1L, "Murder Ink", "MurderInk.com");
-//        List<Label> labelList = Collections.singletonList(label);
-//        String expectedJsonValue = mapper.writeValueAsString(labelList);
-//        mockMvc.perform(get("/label"))
-//                .andDo(print())
-//                .andExpect(status().isOk())
-//                .andExpect(content().json(expectedJsonValue));
-//    }
+    @Test
+    public void getAllLabel() throws Exception {
+        Label label = new Label("Murder Ink", "MurderInk.com");
+        List<Label> labelList = Collections.singletonList(label);
+        String expectedJsonValue = mapper.writeValueAsString(labelList);
+        mockMvc.perform(get("/label"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().json(expectedJsonValue));
+    }
 
-//    @Test
-//    public void createLabel() throws Exception {
-//        Label labelIn = new Label(1L, "orange", "orange.com");
-//        Label labelOut = new Label("Murder Ink", "MurderInk.com");
-//        String labelInJson = mapper.writeValueAsString(labelIn);
-//        String labelOutJson = mapper.writeValueAsString(labelOut);
-//
-//        mockMvc.perform(post("/label")
-//                        .contentType(MediaType.APPLICATION_JSON)
-//                        .content(labelInJson))
-//                .andDo(print())
-//                .andExpect(status().isCreated())            // Assert
-//                .andExpect(content().json(labelOutJson));  // Assert
-//    }
+    @Test
+    public void createLabel() throws Exception {
+        Label label = new Label("Murder Ink", "MurderInk.com");
+        Label label2 = new Label(label.getId(), "orange", "orange.com");
+
+        List<Label> labelList = Arrays.asList(label, label2);
+        String expectedJsonValue = mapper.writeValueAsString(labelList);
+        doReturn(labelList).when(service).findAllLabel();
+        mockMvc.perform(MockMvcRequestBuilders.get("/label"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().json(expectedJsonValue));
+    }
 
     @Test
     public void getOneLabel() throws Exception {
@@ -83,7 +84,7 @@ public class LabelControllerTest {
         ResultActions result = mockMvc.perform(get("/label/1"))
                 .andExpect(status().isOk())
                 .andExpect((content()
-                .json(expectedJsonValue)));
+                        .json(expectedJsonValue)));
     }
 
     @Test
@@ -99,5 +100,4 @@ public class LabelControllerTest {
         Label label = new Label(1L, "Murder Ink", "MurderInk.com");
         mockMvc.perform(delete("/label/1")).andExpect(status().isOk());
     }
-
 }

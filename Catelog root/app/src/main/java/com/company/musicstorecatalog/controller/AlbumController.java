@@ -36,7 +36,8 @@ public class AlbumController {
         if (album.getReleaseDate() == null) throw new RuntimeException("Label must have a Website");
         if (album.getLabelId() == 0) throw new RuntimeException("Label must have a Website");
         if (album.getListPrice() == null) throw new RuntimeException("Label must have a Website");
-        return albumService.createAlbum(album);
+        albumService.createAlbum(album);
+        return album;
     }
 
     @PutMapping(value = "/{id}")

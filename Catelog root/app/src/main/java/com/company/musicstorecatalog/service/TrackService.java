@@ -30,7 +30,8 @@ public class TrackService {
     }
 
     public Track createTrack(Track newTrack) {
-        return trackRepository.save(newTrack);
+        newTrack = trackRepository.save(newTrack);
+        return newTrack;
     }
 
     public Track updateTrack(Track track) {

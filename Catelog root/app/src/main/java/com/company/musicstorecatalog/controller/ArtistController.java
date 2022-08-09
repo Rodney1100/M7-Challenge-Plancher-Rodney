@@ -33,7 +33,8 @@ public class ArtistController {
         if (artist.getName() == null) throw new RuntimeException("Artist must have a name");
         if (artist.getInstagram() == null) throw new RuntimeException("Artist must have a Website");
         if (artist.getTwitter() == null) throw new RuntimeException("Artist must have a Website");
-        return artistService.createArtist(artist);
+        artistService.createArtist(artist);
+        return artist;
     }
 
     @PutMapping(value = "/{id}")

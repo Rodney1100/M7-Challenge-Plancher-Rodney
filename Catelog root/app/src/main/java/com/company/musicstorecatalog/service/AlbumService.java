@@ -31,7 +31,8 @@ public class AlbumService {
     }
 
     public Album createAlbum(Album newAlbum) {
-        return albumRepository.save(newAlbum);
+        newAlbum = albumRepository.save(newAlbum);
+        return newAlbum;
     }
 
     public Album updateAlbum(Album album) {

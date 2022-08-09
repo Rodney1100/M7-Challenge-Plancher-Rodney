@@ -37,27 +37,11 @@ public class LabelServiceTest {
 
         Optional<Label> findByIdResult = Optional.of(labelOut);
 
-//        Mockito.when(mainModel.getList()).thenReturn(someModelList);
         Mockito.when(repo.save(labelIn)).thenReturn(labelOut);
         Mockito.when(repo.findAll()).thenReturn(labelList);
         Mockito.when(repo.findById(1L)).thenReturn(findByIdResult);
 
-//        doReturn(labelOut).when(repo).save(labelIn);
-//        doReturn(labelList).when(repo).findAll();
-//        doReturn(findByIdResult).when((repo).findById(1L));
     }
-
-//    @Test
-//    public void addLabelShouldReturnLabelWithIdWhenSaving() {
-////        Arrange
-////        Make a new label
-//        Label labelToSave = new Label("Murder Ink", "www.MurderInk.com");
-//        Label expectedLabel = new Label(1L,"Murder Ink", "www.MurderInk.com");
-////        Act
-//        Label actualLabel = service.createLabel(labelToSave);
-////        Assert
-//        assertEquals(expectedLabel.toString(), labelToSave.toString());
-//    }
 
     @Test
     public void addLabelShouldReturnLabelWithIdWhenSaving() {

@@ -6,6 +6,7 @@
         <option value="$PROJECT_DIR$/musicstore-catalog/pom.xml" />
         <option value="$PROJECT_DIR$/musicstore-recommendations/pom.xml" />
         <option value="$PROJECT_DIR$/app/pom.xml" />
+        <option value="$PROJECT_DIR$/musicstore-recommendations/app/pom.xml" />
       </list>
     </option>
   </component>

@@ -35,7 +35,8 @@ public class TrackController {
         if (track.getTitle() == null) throw new RuntimeException("Track must have a Title");
         if (track.getAlbumId() == 0) throw new RuntimeException("Track must have a Album ID");
         if (track.getRunTime() == null) throw new RuntimeException("Track must have a Run time");
-        return trackService.createTrack(track);
+        trackService.createTrack(track);
+        return track;
     }
 
     @PutMapping(value = "/{id}")
