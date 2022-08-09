@@ -7,7 +7,7 @@
 #### https://musicstore-catalog.herokuapp.com/track
 
 ## Music Store Recommendations Project:
-#### https://musicstore-recommendation.herokuapp.com/albumRecommendation
-#### https://musicstore-recommendation.herokuapp.com/artistRecommendation
-#### https://musicstore-recommendation.herokuapp.com/labelRecommendation
-#### https://musicstore-recommendation.herokuapp.com/trackRecommendation
+#### https://nameless-ocean-25687.herokuapp.com/labelRecommendation
+#### https://nameless-ocean-25687.herokuapp.com/artistRecommendation
+#### https://nameless-ocean-25687.herokuapp.com/albumRecommendation
+#### https://nameless-ocean-25687.herokuapp.com/trackRecommendation
